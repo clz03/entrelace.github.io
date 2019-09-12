@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:og='http://ogp.me/ns#'>
 <head>
     <meta charset="utf-8">
@@ -24,11 +24,6 @@
 
     <meta property="og:type" content="website" />
     
-
-    <!-- =========================
-       STYLESHEETS
-    ============================== -->
-    <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
 
     <!-- FONT ICONS -->
@@ -73,6 +68,39 @@
     </script>
     <!--End of Zopim Live Chat Script-->
 
+    <script>
+            var end = new Date('10/04/2019 08:00 PM');
+            
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer;
+            
+                function showRemaining() {
+                    var now = new Date();
+                    var distance = end - now;
+                    if (distance < 0) {
+            
+                        clearInterval(timer);
+                        document.getElementById('countdown').innerHTML = 'JÁ CHEGOU!';
+            
+                        return;
+                    }
+                    var days = Math.floor(distance / _day);
+                    var hours = Math.floor((distance % _day) / _hour);
+                    var minutes = Math.floor((distance % _hour) / _minute);
+                    var seconds = Math.floor((distance % _minute) / _second);
+            
+                    document.getElementById('countdown').innerHTML = days + ' dia(s) &nbsp;&nbsp;';
+                    document.getElementById('countdown').innerHTML += hours + ' hora(s) &nbsp;&nbsp;';
+                    document.getElementById('countdown').innerHTML += minutes + ' minuto(s) &nbsp;&nbsp;';
+                    document.getElementById('countdown').innerHTML += seconds + ' segundos ';
+                }
+            
+                timer = setInterval(showRemaining, 1000);
+            </script>
+
 </head>
 
 <body data-spy="scroll" data-target="#main-navbar">
@@ -97,8 +125,33 @@
     </div>
 
 
-
     <div class="main-container" id="page">
+
+    <!-- Modal Teatro Aqui e Agora-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="border-radius: 15">
+        <div class="modal-content">
+           
+            <div class="modal-body" style="background-image: url('images/aquieagora.jpg')">
+                
+                <h3 style="color:white;align-items: center;text-align: center">Centro de Artes Entrelacê apresenta:</h3>
+                <h1 style="color:white;align-items: center; text-align: center;">"AQUI E AGORA"</h1>
+
+                <div style="color: white; font-size: 16;align-items: center;text-align: center;margin-top: 20px;">Faltam:</div>
+
+                <div id="countdown" style="font-weight: bold;color: white; font-size: 18;align-items: center;text-align: center;margin-top: 10px;margin-bottom: 20px" ></div>
+                
+                <div style="text-align: center;font-size: 20;margin-top: 50px">
+                    <button type="button" class="btn" style="color:darkgreen" data-dismiss="modal">Voltar para o Site</button>
+                    <button type="button" class="btn" style="color:darkgreen" onclick="window.open('https://ingressorapido.com.br/event/32628-1/d/64864','_blank')">Comprar ingressos</button>
+                </div>
+            </div>
+            
+          
+        </div>
+        </div>
+    </div>
+
 
         <!-- =========================
             HEADER
@@ -108,6 +161,8 @@
             <nav class="navbar navbar-fixed-top bg-color" id="main-navbar" style="background-color: #1e44ad;">
                 <div class="container">
                     
+                  
+
                     <!-- Logo -->    
                     <div class="col-md-4 col-xs-6 nav-3cols-logo">
                         <img src="images/logo_site.png" alt="">
@@ -133,6 +188,10 @@
         <!-- =========================
              HERO SECTION
         ============================== -->
+
+
+       
+
         <section id="hero1-3" class="hero bg-img" style="background-image:url('images/Banner2.PNG')">
             <!--<div class="overlay"></div>-->
             <div class="container vertical-center-rel">
@@ -155,7 +214,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="section-header text-center wow fadeIn">
-                            <h2 class="m-b-md">Uma expêriencia que muda sua vida</h2>
+                            <h2 class="m-b-md">Uma expêriencia que mudará sua vida</h2>
                             <p class="lead m-b-md">Acreditamos que a dança pode encantar e lhe proporcionar um novo ar cheio de arte em sua vida.</p>
                         </div>
                     </div>
@@ -968,7 +1027,7 @@
            INSTAGRAM SECTION
         ============================== -->
         <section id="instagram" class="p-t-lg p-b-0 bg-light insta-grid">
-            <!-- Section Header -->
+            
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 text-center wow fadeIn">
@@ -977,7 +1036,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Instagram Feed -->
+            
             <div class="instagram-feed wow fadeIn" data-user-name="entrelaceartes">
                 <ul></ul>
             </div>
@@ -1040,7 +1099,7 @@
         <!-- /End Testimonials Section-->
         <!-- =========================
            GOOGLE MAP SECTION
-        ==============================
+        ==============================-->
         <section id="contact5-1" class="contact">
 
             <div class="map-container">
@@ -1181,6 +1240,11 @@
 
     </script>
 
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
 
 </body>
 </html>
