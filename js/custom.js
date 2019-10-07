@@ -316,7 +316,7 @@ window.twttr = (function(d, s, id) {
 ============================================================== */
 if( $('.instagram-feed').length ) {
     jQuery.fn.spectragram.accessData = {
-        accessToken: '2519710407.9cf1107.8a484011dd1d41ee8697678f83f5c521',
+        accessToken: '2519710407.9cf1107.ae5a2417c3ab4cceb362b8dcf3815a7a',
         clientID: '9cf1107706154202b35fbae138f32a9d'
     };
 
