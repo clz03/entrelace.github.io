@@ -1037,7 +1037,7 @@
                 </div>
             </div>
             
-            <div class="instagram-feed wow fadeIn" data-user-name="entrelaceartes">
+            <div id="instafeed" class="instagram-feed wow fadeIn" data-user-name="entrelaceartes">
                 <ul></ul>
             </div>
         </section>
@@ -1220,7 +1220,15 @@
     <script src="js/plugins/jquery.magnific-popup.min.js"></script>
     <script src="js/plugins/jquery.vide.min.js"></script>
     <script src="js/plugins/owl.carousel.min.js"></script>
-    <script src="js/plugins/spectragram.min.js"></script>
+    <script src="js/plugins/instafeed.min.js"></script>
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            get: 'user',
+            userId: 'entrelaceartes',
+            clientId: '9cf1107706154202b35fbae138f32a9d'
+        });
+        feed.run();
+    </script>
     <script src="js/plugins/twitterFetcher_min.js"></script>
     <script src="js/plugins/wow.min.js"></script>
     <script src="js/plugins/picker.js"></script>
